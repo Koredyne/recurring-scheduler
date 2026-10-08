@@ -87,7 +87,7 @@ export default function PackagesView({ state, mutate, selectedId, setSelectedId,
                   <Users className="size-3" /> {v.n(state.packageMembers.filter((pm) => pm.package_id === p.id).length, 'member')}
                   {cheapest(plansOf(state, p.id)) != null && <span>· from {money(cheapest(plansOf(state, p.id)), v)}</span>}
                 </span>
-                {gaps > 0 && <span className="text-xs text-primary">{gaps} gap{gaps > 1 ? 's' : ''} from inactive slots</span>}
+                {gaps > 0 && <span className="text-xs text-destructive">{gaps} gap{gaps > 1 ? 's' : ''} from inactive slots</span>}
               </button>
             );
           })}
@@ -207,7 +207,7 @@ function PackageDetail({ pkg, state, mutate, goToDate, onCreate, onOpenSession, 
           >
             <ArrowRightLeft /> Replace from a date
           </Button>
-          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary" onClick={() => setConfirmDelete(true)}>
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-destructive" onClick={() => setConfirmDelete(true)}>
             <Trash2 /> Delete
           </Button>
         </div>
@@ -244,7 +244,7 @@ function PackageDetail({ pkg, state, mutate, goToDate, onCreate, onOpenSession, 
           <Button disabled={!dirty || introduced.length > 0 || badEnd} onClick={save}>Save</Button>
         </div>
         {(badEnd || pruned > 0) && (
-          <p className="basis-full text-xs text-primary">
+          <p className="basis-full text-xs text-destructive">
             {badEnd ? 'The end can’t be before the start.' : `This removes ${v.n(pruned, 'class')} planned for weeks after week ${draftPkg.cycle_length}.`}
           </p>
         )}
@@ -389,7 +389,7 @@ function PackageCalendar({ state, pkg, onCreate, onOpenSession, goToDate }) {
             <Button variant="ghost" size="icon-sm" onClick={() => setRound(round + 1)} aria-label="Next cycle"><ChevronRight /></Button>
           </div>
         )}
-        {ended && <span className="text-xs text-primary">The {v.package} has ended by then.</span>}
+        {ended && <span className="text-xs text-destructive">The {v.package} has ended by then.</span>}
         <div className="ml-auto flex items-center gap-4">
           <div className="flex items-center gap-2">
             <Switch id="others" checked={showOthers} onCheckedChange={setShowOthers} />

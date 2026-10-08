@@ -117,7 +117,7 @@ export default function DayClassDialog({ state, session: s, mutate, onClose, onO
           <DialogTitle className="flex items-center gap-2">
             <span className="size-2.5 rounded-full" style={{ background: colorOf(s.cls.activity) }} />
             <span className={s.cancelled ? 'line-through decoration-2' : undefined}>{s.cls.activity}</span>
-            {s.cancelled && <span className="rounded-md bg-primary/15 px-1.5 py-0.5 text-xs font-medium text-primary">Cancelled</span>}
+            {s.cancelled && <span className="rounded-md bg-destructive/15 px-1.5 py-0.5 text-xs font-medium text-destructive">Cancelled</span>}
             {!s.cancelled && s.change && (
               <span className="rounded-md bg-amber-400/15 px-1.5 py-0.5 text-xs font-medium text-amber-300">Changed for this day</span>
             )}
@@ -187,7 +187,7 @@ export default function DayClassDialog({ state, session: s, mutate, onClose, onO
             {edited &&
               ready &&
               (clashes.length ? (
-                <div className="space-y-1 rounded-lg border border-primary/40 bg-primary/5 p-2.5 text-xs text-primary">
+                <div className="space-y-1 rounded-lg border border-destructive/40 bg-destructive/5 p-2.5 text-xs text-destructive">
                   {clashes.map((c, i) => (
                     <div key={i} className="flex items-start gap-1.5">
                       <TriangleAlert className="mt-px size-3.5 shrink-0" />

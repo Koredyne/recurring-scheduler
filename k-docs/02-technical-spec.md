@@ -196,7 +196,7 @@ All writes except reset, clear and settings go through the clash guard.
 
 **State.** `App.jsx` holds the state. Actions call `mutate(api => api.x(...))`, which runs the request, swaps in the returned state and shows errors as toasts. No global store; only the vocabulary comes through a React context.
 
-**Header.** The business name (or "Recurring Scheduler"), the tabs (three of them named from the vocabulary), and a **Playground** badge when `state.playground` is true. The browser tab title is "*Name* · Recurring Scheduler".
+**Header.** The Koredyne icon, **Koredyne Schedule** and the business name, the tabs (three of them named from the vocabulary), and a **Playground** badge when `state.playground` is true. A footer reads "Powered by Koredyne" and links to koredyne.com. The browser tab title is "*Name* · Koredyne Schedule".
 
 **Two contexts, two sets of handlers.** `App.jsx` routes clicks by where they happen:
 

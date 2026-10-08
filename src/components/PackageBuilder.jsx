@@ -210,7 +210,7 @@ function PackageForm({ state, pkg, onCancel, onSave }) {
             <Button size="xs" variant="ghost" onClick={() => setPlans([...plans, { classes: '24', months: '1', price: '' }])}>
               <Plus /> Another way to sell it
             </Button>
-            {unfinishedPlan && <p className="text-xs text-primary">Type a number for each custom amount, or pick one from the list.</p>}
+            {unfinishedPlan && <p className="text-xs text-destructive">Type a number for each custom amount, or pick one from the list.</p>}
           </div>
         </Step>
 
@@ -231,7 +231,7 @@ function PackageForm({ state, pkg, onCancel, onSave }) {
               </>
             )}
           </div>
-          {badEnd && <p className="mt-1.5 text-xs text-primary">The last week can’t be before the start.</p>}
+          {badEnd && <p className="mt-1.5 text-xs text-destructive">The last week can’t be before the start.</p>}
         </Step>
       </div>
 
@@ -277,7 +277,7 @@ function PackageSummary({ state, pkg, onClose, onEdit }) {
         {'  '}
         {clockRange(g.slot.start_time, g.slot.end_time)} · {g.cls.coach}
       </span>
-      {g.gap && <span className="ml-1.5 text-xs text-primary">{v.class} time switched off</span>}
+      {g.gap && <span className="ml-1.5 text-xs text-destructive">{v.class} time switched off</span>}
     </span>
   );
 

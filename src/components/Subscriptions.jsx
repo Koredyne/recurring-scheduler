@@ -28,7 +28,7 @@ export function subStatus(sub, today = todayStr()) {
   if (left <= 7) return { tone: 'soon', text: `${left} day${left > 1 ? 's' : ''} left` };
   return { tone: 'ok', text: `Until ${fmtShort(sub.end_date)}` };
 }
-const TONE = { ok: 'text-muted-foreground', muted: 'text-muted-foreground/70', soon: 'text-primary', expired: 'text-primary/80 line-through' };
+const TONE = { ok: 'text-muted-foreground', muted: 'text-muted-foreground/70', soon: 'text-destructive', expired: 'text-destructive/80 line-through' };
 
 // Form for a new or existing subscription. `member` is fixed when editing; otherwise pick from `available`.
 function SubscriptionForm({ plans, available, initial, onSave, onRemove }) {
@@ -110,7 +110,7 @@ function SubscriptionForm({ plans, available, initial, onSave, onRemove }) {
       </div>
       <div className="flex items-center gap-2 pt-1">
         {onRemove && (
-          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary" onClick={onRemove}>
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-destructive" onClick={onRemove}>
             <Trash2 /> Remove
           </Button>
         )}
@@ -301,7 +301,7 @@ function PlanPopover({ title, plan, onSave, onDelete, trigger }) {
           </div>
           <div className="flex items-center gap-2">
             {onDelete && (
-              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary" onClick={onDelete}>
+              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-destructive" onClick={onDelete}>
                 <Trash2 /> Delete
               </Button>
             )}

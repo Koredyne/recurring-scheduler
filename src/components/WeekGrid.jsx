@@ -397,7 +397,7 @@ function Lane({
               s.cancelled && 'opacity-45 [&>div:first-of-type]:line-through',
               s.change && !s.cancelled && 'border-amber-300/50',
               moving?.s.key === s.key && 'opacity-30',
-              s.gap && 'border-dashed border-primary/50',
+              s.gap && 'border-dashed border-destructive/50',
               s.oneOff && !ghost && 'border-dashed border-foreground/35',
               conf && 'outline outline-1 outline-primary',
               dim && 'opacity-25',
@@ -412,7 +412,7 @@ function Lane({
             {/* Accent pill runs the full height, inset inside the block */}
             {!ghost && <span className="absolute top-1 bottom-1 left-[3px] w-[3px] rounded-full" style={{ background: color }} />}
             <div className={cn('truncate font-medium', !ghost && 'text-foreground')}>
-              {conf && <TriangleAlert className="mr-0.5 inline size-3 -translate-y-px text-primary" />}
+              {conf && <TriangleAlert className="mr-0.5 inline size-3 -translate-y-px text-destructive" />}
               {s.gap ? `Gap · ${s.cls.activity}` : s.cls.activity}
             </div>
             {wide ? (
@@ -449,7 +449,7 @@ function Lane({
                   <div
                     className={cn(
                       'flex min-w-0 items-center gap-1 text-[10px] text-muted-foreground/80',
-                      s.cancelled && 'text-primary',
+                      s.cancelled && 'text-destructive',
                       s.change && !s.cancelled && 'text-amber-300',
                     )}
                   >
@@ -555,7 +555,7 @@ function SessionPreview({ s, state, color, conf }) {
       )}
 
       {(conf?.length > 0 || s.gap) && (
-        <div className="space-y-1 border-t p-3 text-xs text-primary">
+        <div className="space-y-1 border-t p-3 text-xs text-destructive">
           {s.gap && (
             <div className="flex items-center gap-1.5">
               <TriangleAlert className="size-3.5" /> Slot is inactive — gap in the rotation
@@ -600,7 +600,7 @@ function OneOffPreview({ s, state, color, conf, minutes }) {
         {s.oneOff.note && <p className="text-muted-foreground">{s.oneOff.note}</p>}
       </div>
       {conf?.length > 0 && (
-        <div className="space-y-1 border-t p-3 text-xs text-primary">
+        <div className="space-y-1 border-t p-3 text-xs text-destructive">
           {conf.map((c, i) => (
             <div key={i} className="flex items-center gap-1.5">
               <TriangleAlert className="size-3.5 shrink-0" />

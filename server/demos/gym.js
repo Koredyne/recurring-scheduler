@@ -12,7 +12,7 @@ const STT = [SUN, TUE, THU];
 const AREAS = ['Ring', 'Mat', 'Studio'];
 
 const ACTIVITIES = {
-  Boxing: '#e5484d',
+  Boxing: '#66a3f2',
   BJJ: '#5b7cfa',
   MMA: '#4cc38a',
   Kickboxing: '#f2994a',

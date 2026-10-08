@@ -398,13 +398,13 @@ function SlotDialog({ state, draft, usedBy, usedAnywhere, onClose, mutate }) {
             </AlertDescription>
           </Alert>
         )}
-        {badTime && <p className="text-xs text-primary">End time must be after the start.</p>}
+        {badTime && <p className="text-xs text-destructive">End time must be after the start.</p>}
 
         <DialogFooter>
           {!isNew && (
             <Button
               variant="ghost"
-              className="text-muted-foreground hover:text-primary sm:mr-auto"
+              className="text-muted-foreground hover:text-destructive sm:mr-auto"
               disabled={usedAnywhere}
               title={usedAnywhere ? `Used by ${v.packages} — remove it from them first` : undefined}
               onClick={() => setConfirmDelete(true)}

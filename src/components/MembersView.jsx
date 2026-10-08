@@ -113,7 +113,7 @@ export default function MembersView({ state, mutate, onOpenPackage, onOpenOneOff
                           >
                             <button className="hover:underline" onClick={() => onOpenPackage(p.id)}>{p.name}</button>
                             {plan && <span className="text-muted-foreground">· {plan.classes_per_month ?? 'Unlimited'}</span>}
-                            <span className={cn(st.tone === 'soon' || st.tone === 'expired' ? 'text-primary' : 'text-muted-foreground', st.tone === 'expired' && 'line-through')}>· {st.text}</span>
+                            <span className={cn(st.tone === 'soon' || st.tone === 'expired' ? 'text-destructive' : 'text-muted-foreground', st.tone === 'expired' && 'line-through')}>· {st.text}</span>
                             <button
                               className="grid size-4 place-items-center rounded-full text-muted-foreground hover:bg-accent hover:text-foreground"
                               aria-label={`Remove from ${p.name}`}
@@ -152,7 +152,7 @@ export default function MembersView({ state, mutate, onOpenPackage, onOpenOneOff
                       </div>
                     </TableCell>
                     <TableCell>
-                      <Button variant="ghost" size="icon-sm" className="text-muted-foreground hover:text-primary" aria-label={`Delete ${v.member}`} onClick={() => setDeleting(m)}>
+                      <Button variant="ghost" size="icon-sm" className="text-muted-foreground hover:text-destructive" aria-label={`Delete ${v.member}`} onClick={() => setDeleting(m)}>
                         <Trash2 />
                       </Button>
                     </TableCell>

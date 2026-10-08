@@ -65,7 +65,7 @@ The rest of this document uses the gym words.
 
 ## 5. Screens and behaviour
 
-The top bar shows the business name (or "Recurring Scheduler" when none is set) and six tabs, ordered by how often they're used: **Schedule, Members, Packages, Classes, Rooms & times, Settings**. On the public playground a **Playground** badge sits on the right (5.9).
+The top bar shows the Koredyne icon and **Koredyne Schedule**, then the business name and six tabs, ordered by how often they're used: **Schedule, Members, Packages, Classes, Rooms & times, Settings**. On the public playground a **Playground** badge sits on the right (5.9).
 
 ### 5.1 Schedule
 

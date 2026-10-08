@@ -55,11 +55,11 @@ export function DayAgenda({ state, day, colorOf, filters, onOpenSession }) {
               <span className="w-[3px] shrink-0 rounded-full" style={{ background: colorOf(s.cls.activity) }} />
               <div className="min-w-0 flex-1 space-y-0.5">
                 <div className="flex items-center gap-1.5 text-sm font-medium">
-                  {conf && <TriangleAlert className="size-3.5 shrink-0 text-primary" />}
+                  {conf && <TriangleAlert className="size-3.5 shrink-0 text-destructive" />}
                   <span className={cn('truncate', s.cancelled && 'line-through')}>{s.cls.activity}</span>
                   {s.slot.label && <span className="truncate font-normal text-muted-foreground">· {s.slot.label}</span>}
                   {s.oneOff && <span className="ml-auto shrink-0 rounded border border-dashed px-1 text-[10px] text-muted-foreground">One time</span>}
-                  {s.cancelled && <span className="ml-auto shrink-0 rounded bg-primary/15 px-1 text-[10px] text-primary">Cancelled</span>}
+                  {s.cancelled && <span className="ml-auto shrink-0 rounded bg-destructive/15 px-1 text-[10px] text-destructive">Cancelled</span>}
                   {s.change && !s.cancelled && (
                     <span className="ml-auto shrink-0 rounded bg-amber-400/15 px-1 text-[10px] text-amber-300">Changed today</span>
                   )}
@@ -147,7 +147,7 @@ export function MonthView({ state, idx, month, colorOf, filters, onPickDay }) {
                   {Number(c.date.slice(8))}
                 </span>
                 {c.clashes > 0 && (
-                  <span className="flex items-center gap-0.5 text-[10.5px] text-primary" title={`${c.clashes} clash${c.clashes > 1 ? 'es' : ''}`}>
+                  <span className="flex items-center gap-0.5 text-[10.5px] text-destructive" title={`${c.clashes} clash${c.clashes > 1 ? 'es' : ''}`}>
                     <TriangleAlert className="size-3" /> {c.clashes}
                   </span>
                 )}

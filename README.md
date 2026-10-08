@@ -1,4 +1,4 @@
-# Recurring Scheduler
+# Koredyne Schedule
 
 Plan who runs what, in which room, on which day, when the timetable repeats every week or rotates over several weeks. One engine, three kinds of business out of the box: a **gym**, a **clinic** and **meeting rooms**. The words on screen follow the business (Class / Session / Meeting, Coach / Practitioner / Host, Member / Patient / Client), and every change is checked so a room or a person is never double-booked.
 

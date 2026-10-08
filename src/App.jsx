@@ -7,7 +7,7 @@ import { DEMOS } from './lib/demos.js';
 import { vocabFor } from './lib/vocab.js';
 import { VocabContext } from './components/VocabContext.jsx';
 
-const APP_NAME = 'Recurring Scheduler';
+const APP_NAME = 'Koredyne Schedule';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Toaster } from '@/components/ui/sonner';
@@ -95,7 +95,11 @@ export default function App() {
     <TooltipProvider delayDuration={150}>
       <div className="flex h-screen flex-col overflow-hidden">
         <header className="flex h-12 shrink-0 items-center gap-6 border-b bg-sidebar px-5">
-          <span className="shrink-0 whitespace-nowrap font-heading text-base font-semibold tracking-tight">{v.name || APP_NAME}</span>
+          <span className="flex shrink-0 items-center gap-2 whitespace-nowrap">
+            <img src="/koredyne-icon.svg" alt="" className="h-5 brightness-0 invert" />
+            <span className="font-heading text-base font-semibold tracking-tight">{APP_NAME}</span>
+            {v.name && <span className="hidden max-w-48 truncate text-sm text-muted-foreground xl:inline">{v.name}</span>}
+          </span>
           <nav className="flex h-full items-center gap-1 whitespace-nowrap">
             {TABS.map(([key, label, Icon]) => (
               <button
@@ -148,6 +152,13 @@ export default function App() {
           )}
           {tab === 'config' && <ConfigView state={state} mutate={mutate} onData={setConfirmData} />}
         </main>
+
+        <footer className="flex h-8 shrink-0 items-center justify-center border-t text-xs text-muted-foreground">
+          <a href="https://www.koredyne.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-foreground">
+            Powered by
+            <img src="/koredyne-logo.svg" alt="Koredyne" className="h-3.5 opacity-70 brightness-0 invert" />
+          </a>
+        </footer>
       </div>
 
       {dialog?.type === 'create' && <EntryDialog state={state} init={dialog.init} mutate={mutate} onClose={() => setDialog(null)} />}

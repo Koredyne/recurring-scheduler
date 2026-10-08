@@ -174,7 +174,7 @@ export default function OneOffDialog({ state, init, mutate, onClose }) {
 
           {ready &&
             (clashes.length ? (
-              <div className="space-y-1 rounded-lg border border-primary/40 bg-primary/5 p-3 text-xs text-primary">
+              <div className="space-y-1 rounded-lg border border-destructive/40 bg-destructive/5 p-3 text-xs text-destructive">
                 {clashes.map((c, i) => (
                   <div key={i} className="flex items-start gap-1.5">
                     <TriangleAlert className="mt-px size-3.5 shrink-0" />
@@ -192,7 +192,7 @@ export default function OneOffDialog({ state, init, mutate, onClose }) {
         <DialogFooter className="items-center sm:justify-between">
           <div className="flex items-center gap-2">
             {editing && (
-              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary" onClick={() => setConfirmDelete(true)}>
+              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-destructive" onClick={() => setConfirmDelete(true)}>
                 <Trash2 /> Cancel this {v.class}
               </Button>
             )}

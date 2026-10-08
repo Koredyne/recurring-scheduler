@@ -93,6 +93,9 @@ Each significant decision, why it was made, and what was considered instead.
 
 **Print is type-only, one page.** Posters are often image-heavy; a text-first version can go on a noticeboard, in a messaging app or on a website. It auto-fits one A4 page so browser differences (Safari's headers and footers) don't push the last activity onto page 2. The default title follows the kind (Training Schedule, Clinic Timetable, Room Bookings).
 
+**Koredyne theme.** Near-black greys with Koredyne blue as the accent (selection, today, the current-time line, active tab). Red is kept for warnings only: clashes, cancellations and errors, so problems still stand out. The header carries the Koredyne Schedule name and a "Powered by Koredyne" footer.
+*Instead:* a red accent, which made warnings and normal highlights look the same.
+
 ## Platform
 
 **SQLite via `node:sqlite`, one process for UI + API.** One file, zero setup, no extra dependency, one deploy and one URL. Right-sized for one business.

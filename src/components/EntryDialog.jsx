@@ -277,7 +277,7 @@ export default function EntryDialog({ state, init, mutate, onClose }) {
                   <span className="size-2 rounded-full" style={{ background: colorOf(c.activity) }} />
                   {c.activity}
                   <span className="text-muted-foreground">{c.coach}</span>
-                  {clashingClasses.has(c.id) && <span className="text-xs text-primary">clashes</span>}
+                  {clashingClasses.has(c.id) && <span className="text-xs text-destructive">clashes</span>}
                 </SelectItem>
               ))}
               <SelectSeparator />
@@ -419,7 +419,7 @@ export default function EntryDialog({ state, init, mutate, onClose }) {
                       {exCls && <span className="size-1.5 rounded-full" style={{ background: colorOf(exCls.activity) }} />}
                       {exCls ? `${exCls.activity} · ${exCls.coach}` : 'Empty'}
                     </span>
-                    {on && exCls && exCls.id !== cls?.id && <span className="text-primary">Will be replaced</span>}
+                    {on && exCls && exCls.id !== cls?.id && <span className="text-destructive">Will be replaced</span>}
                     {nextDates[p] && <span className="text-muted-foreground/70">{nextDates[p].map(fmtShort).join(', ')}</span>}
                   </button>
                 );

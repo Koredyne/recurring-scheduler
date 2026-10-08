@@ -1,4 +1,4 @@
-# Recurring Scheduler — Technical Documentation
+# Koredyne Schedule — Technical Documentation
 
 A scheduler for recurring sessions in rooms, for any business that runs a weekly timetable: a gym or studio, a clinic, a business centre with meeting rooms. People run activities in rooms; repeating series (weekly or rotating over several weeks) place them on a week calendar that refuses to let two sessions clash in the same room or with the same person. Clients subscribe to a series on a plan. The words on screen follow the kind of business.
 
@@ -109,7 +109,7 @@ The full list, with the alternatives that were rejected, is in [`k-docs/03-decis
 
 ## 3. Using the app
 
-The top bar shows the business name (or "Recurring Scheduler" when none is set) and six tabs, ordered by how often they're used: **Schedule**, ***Members***, ***Packages***, ***Classes***, **Rooms & times**, **Settings**. The three in italics follow the vocabulary: a clinic sees **Patients, Programmes, Sessions**; meeting rooms see **Clients, Series, Meetings**. In playground mode a **Playground** badge sits on the right of the bar.
+The top bar shows the Koredyne icon and **Koredyne Schedule**, then the business name and six tabs, ordered by how often they're used: **Schedule**, ***Members***, ***Packages***, ***Classes***, **Rooms & times**, **Settings**. The three in italics follow the vocabulary: a clinic sees **Patients, Programmes, Sessions**; meeting rooms see **Clients, Series, Meetings**. In playground mode a **Playground** badge sits on the right of the bar.
 
 The app avoids system words: on screen, *areas* are **rooms**, *slots* are **class times** (session times, meeting times), and a package's *cycle* is **Repeats**. The descriptions below use the gym words.
 
@@ -439,7 +439,7 @@ curl -X POST http://localhost:3000/api/reset \
 ## 9. Front end
 
 - **State**: `App.jsx` holds `state` from the API. Each action calls `mutate(api => api.something(...))`, which runs the request, swaps in the returned state, and shows any error as a toast. Components receive `state` and `mutate` as props; there is no global store.
-- **Vocabulary**: `App.jsx` builds `v = vocabFor(state.settings)` and provides it through `VocabContext`. Components call `useVocab()` and write `v.Classes`, `v.n(n, 'member')`, `v.money(price)` instead of fixed words. Pure helpers take `v` as an argument (`planLabel(p, v)`, `describeConflict(c, withDate, v)`) and default to the gym words (`GYM`). The browser tab title is "*Name* · Recurring Scheduler".
+- **Vocabulary**: `App.jsx` builds `v = vocabFor(state.settings)` and provides it through `VocabContext`. Components call `useVocab()` and write `v.Classes`, `v.n(n, 'member')`, `v.money(price)` instead of fixed words. Pure helpers take `v` as an argument (`planLabel(p, v)`, `describeConflict(c, withDate, v)`) and default to the gym words (`GYM`). The browser tab title is "*Name* · Koredyne Schedule".
 - **WeekGrid**:
   - Measures its own height with a `ResizeObserver` and sets *pixels per minute* so the visible hours always fill the screen (minimum 0.45 px/min).
   - Within a lane, overlapping items are laid out side by side in columns.
