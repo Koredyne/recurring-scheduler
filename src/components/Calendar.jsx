@@ -141,7 +141,7 @@ export default function Calendar({ state, mutate, viewDate, setViewDate, onCreat
             <ChevronRight />
           </Button>
         </div>
-        <span className="font-heading text-sm font-medium">{title}</span>
+        <span className="whitespace-nowrap font-heading text-sm font-medium">{title}</span>
         {roomsOnTop && state.areas.length > 1 && (
           <div className="ml-4 flex items-center gap-1 rounded-lg border p-0.5" role="group" aria-label="Rooms">
             <RoomPill on={!rooms.length} onClick={() => setRooms([])}>
@@ -401,7 +401,7 @@ function RoomPill({ on, onClick, children }) {
       onClick={onClick}
       aria-pressed={on}
       className={cn(
-        'rounded-md px-2.5 py-1 text-sm transition-colors',
+        'whitespace-nowrap rounded-md px-2.5 py-1 text-sm transition-colors',
         on ? 'bg-accent font-medium text-foreground' : 'text-muted-foreground hover:text-foreground',
       )}
     >
